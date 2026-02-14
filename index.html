@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For Meri Gudda ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 500px;
+        }
+
+        img {
+            width: 220px;
+            border-radius: 20px;
+            margin: 15px 0;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 25px;
+            margin: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #yesBtn {
+            background-color: white;
+            color: #ff416c;
+        }
+
+        #noBtn {
+            background-color: black;
+            color: white;
+        }
+
+        #message {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+        #loveMessage {
+            display: none;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>💖 Tumhara Betu Nitin 💖</h1>
+    <h2>Meri Gudda ❤️</h2>
+
+    <img src="photo.jpg" alt="Our Photo">
+
+    <p>Kya tum meri Valentine banogi? 😘</p>
+
+    <button id="yesBtn" onclick="showLove()">Yes ❤️</button>
+    <button id="noBtn" onclick="handleNo()">No 😜</button>
+
+    <div id="message"></div>
+
+    <div id="loveMessage">
+        💌 Yayyyy Meri Gudda ❤️<br>
+        Tum meri life ka sabse pyara gift ho 🎁<br>
+        Main promise karta hoon hamesha tumhe smile karata rahunga 😊<br>
+        Tum meri duniya ho, meri heartbeat ho 💓<br>
+        I Love You So Much Meri Gudda 😘💖
+    </div>
+
+</div>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    let noCount = 0;
+    let yesSize = 18;
+
+    function showLove() {
+        document.getElementById("loveMessage").style.display = "block";
+        document.getElementById("message").innerHTML = "";
+    }
+
+    function handleNo() {
+        noCount++;
+        yesSize += 8;
+        document.getElementById("yesBtn").style.fontSize = yesSize + "px";
+
+        if(noCount == 1){
+            document.getElementById("message").innerHTML = "🥺 Arey Gudda please soch lo na...";
+        }
+        else if(noCount == 2){
+            document.getElementById("message").innerHTML = "💔 Itni jaldi mana kar diya? Ek baar aur soch lo na please...";
+        }
+        else if(noCount == 3){
+            document.getElementById("message").innerHTML = "🙏 Gudda plzz maan jao na... main chocolate bhi dunga 🍫";
+        }
+        else if(noCount == 4){
+            document.getElementById("message").innerHTML = "🥹 Itna mat tadpao na... tumhare bina Valentine adhoora hai...";
+        }
+        else {
+            document.getElementById("message").innerHTML = "😢 Last request Gudda... please Yes kar do na...";
+            document.getElementById("noBtn").style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
